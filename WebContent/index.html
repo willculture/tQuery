@@ -1,9 +1,30 @@
 <html>
 	<head>
+	       <meta charset="utf-8" />
 	       <title>tQuery实例</title>
 	       <script type="text/javascript" src="js/tQuery.js"></script>
 	</head>
 	<body>
-	
+	        <div tid="tquery" id="abc">
+	        	<h3>tQuery 测试</h3>
+	        	<div tid="tquery.content">
+	        	      <ul>
+	        	      	<li> 1.节点获取，节点操作</li>
+	        	      	<li>2.节点事件</li>
+	        	      	<li>3.弹出框</li>
+	        	      	<li>4.上传插件 </li>
+	        	      </ul>
+	        	</div>
+	        	dsad
+	        </div>
+	        
+	        
+	        <script type="text/javascript">
+	                   var t = tQuery("#abc");
+	                //   alert(t.outHtml())
+	                   alert(t.text())
+	                   
+	        </script>
+	        
 	</body>
 </html>
