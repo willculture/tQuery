@@ -3,14 +3,15 @@
 	       <meta charset="utf-8" />
 	       <title>tQuery实例</title>
 	       <script type="text/javascript" src="js/tQuery.js"></script>
+	       
 	</head>
 	<body>
-	        <div tid="tquery" id="abc">
+	        <div tid="tquery" id="abc" class="abc">
 	        	<h3>tQuery 测试</h3>
-	        	<div tid="tquery.content">
+	        	<div tid="tquery.content" class="abc">
 	        	      <ul>
-	        	      	<li> 1.节点获取，节点操作</li>
-	        	      	<li>2.节点事件</li>
+	        	      	<li class="abc"> 1.节点获取，节点操作</li>
+	        	      	<li id="b">2.节点事件</li>
 	        	      	<li>3.弹出框</li>
 	        	      	<li>4.上传插件 </li>
 	        	      </ul>
@@ -18,13 +19,15 @@
 	        	dsad
 	        </div>
 	        
-	        
-	        <script type="text/javascript">
-	                   var t = tQuery("#abc");
-	                //   alert(t.outHtml())
-	                   alert(t.text())
+	          <script type="text/javascript">
+	                   var t = tQuery(tQuery("#abc")); 
+	                   alert(t.html())
+	                 //  alert(t.eq(2).parent().html());	                  
+	                  // alert(t.eq(0).find("#b").html());	            
+	                 //  alert(t.eq(1).html());	            
 	                   
 	        </script>
+	      
 	        
 	</body>
 </html>

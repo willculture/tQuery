@@ -1,0 +1,23 @@
+<html>
+	<head>
+	       <meta charset="utf-8" />
+	       <title>tQuery实例</title>	       
+	</head>
+	<body>
+	        
+	        <script type="text/javascript">
+	                var name = "全局名称";
+	                 function profunction(abc){ 
+	                	     alert(abc)
+	                	     alert(this.name)
+	                 }
+	                 var obj = {
+	                		 name:"这是对象的名称"
+	                 }
+	               var fn = new profunction().constructor
+	               fn("哈哈")
+	               profunction.call(obj,"对象");
+	     </script>
+	        
+	</body>
+</html>
