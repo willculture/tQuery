@@ -7,7 +7,7 @@ tQuery
 <ul>
 <li>
    1.节点获取，节点操作
-   修改了IE中的bug
+   <br />修改了IE中的bug,加入prev和next方法
 </li>
 <li>
    2.节点事件

@@ -25,7 +25,7 @@
 			}
 
 			//
-			if (selector.constructor == tQuery) {// 如果是tQuery 
+			if (selector.constructor == tQuery) {// 如果是tQuery
 				return selector;
 			} else if (tQuery.utils.startWith(selector, "#")) { // 如果是id
 				var ele = tQuery.utils.removeStart(selector, "#");
@@ -33,7 +33,7 @@
 				var node = document.getElementById(ele);
 				this[0] = node;
 
-			} else if (tQuery.utils.startWith(selector, ".")) {// 如果是class 
+			} else if (tQuery.utils.startWith(selector, ".")) {// 如果是class
 				var elelist = document.getElementsByTagName("*");
 				var rootname = tQuery.utils.removeStart(selector, ".");
 				this.length = 0;
@@ -45,11 +45,11 @@
 					}
 				}
 
-			} else {// 如果是标签名 
+			} else {// 如果是标签名
 				var elelist = document.getElementsByTagName(selector);
 				this.length = 0;
-				for (var i = 0;i<elelist.length;i++) {
-					this[this.length] = elelist[i]; 
+				for (var i = 0; i < elelist.length; i++) {
+					this[this.length] = elelist[i];
 					this.length++;
 				}
 
@@ -62,7 +62,7 @@
 		html : function() {
 			return this[0].innerHTML;
 		},
-		outHtml:function(){
+		outHtml : function() {
 			return this[0].outerHTML;
 		}
 
@@ -76,14 +76,14 @@
 		 */
 		startWith : function(source, param) {
 			var len = param.length;
-			var b = true; 
+			var b = true;
 			for (var i = 0; i < len; i++) {
-				 
+
 				if (param.charCodeAt(i) != source.charCodeAt(i)) {
 					b = false;
 					break;
 				}
-			} 
+			}
 			return b;
 		},
 		/**
@@ -108,28 +108,39 @@
 	 * eq:从列表中选择 <br />
 	 * find:从所有子类中选择 <br />
 	 * parent:从当前父类中选择 <br />
+	 * next :下一个节点 <br />
+	 * prev : 上一个节点
 	 */
 	tQuery.fn.extend({
 		eq : function(index) {
 			var t = this.constructor();
-			t[0] = this[index];  
+			t[0] = this[index];
 			return t;
 		},
 		find : function(elem) {
 			var t = this.constructor(elem);
 			return t;
 		},
-		parent : function() { 
-			var t = this.constructor();  
+		parent : function() {
+			var t = this.constructor();
 			t[0] = this[0].parentNode;
-			t.length = 1; 
+			t.length = 1;
 			return t;
 		},
 		next : function() {
+			var t = this.constructor();
+			var node = this[0].nextElementSibling || this[0].nextSibling; 
+			t[0] = node;
+			t.length = 1;
+			return t;
 
 		},
 		prev : function() {
-
+			var t = this.constructor();
+			var node = this[0].previousElementSibling || this[0].previousSibling;
+			t[0] = node;
+			t.length = 1;
+			return t;
 		}
 	});
 

@@ -22,9 +22,11 @@
 	          <script type="text/javascript">
 	                   var t = tQuery(tQuery("li")); 
 	                   //alert(t.html())
-	                   alert(t.eq(2).html());	                  
+	                   //alert(t.eq(2).html());	                  
 	                  // alert(t.eq(0).find("#b").html());	            
 	                 //  alert(t.eq(1).html());	            
+	                 var html = t.eq(2).prev().html();
+	                 alert(html)
 	                   
 	        </script>
 	      
